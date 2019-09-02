@@ -1,0 +1,93 @@
+#aside {position:absolute; position:fixed; top:100px;right:0;z-index:3;width:100px;}
+#cssSearch {position:absolute;right:0;top:50%;transform:translateY(-50%);}
+/* 모바일에선 검색기능을 보이지 않게 한다.(반응형 웹) */
+@media screen and (max-width: 427px) {
+  #cssSearch { display: none; }
+  #aside { display:none; }
+  .preview-bar { display:none; }
+}
+
+/* 데스크탑에서의 반응형 웹css 적용 */
+@media screen and (min-width: 428px) {
+  #mob_desk {
+    display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  }
+}
+/* 데스크탑, 모바일 뷰를 가운데 정렬 */
+.justify-content-center {
+    justify-content: center;
+}
+
+/* 깃허브, 로그인 회원가입 메뉴를 정렬과 크기 조절 */
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -.75rem;
+    margin-left: -.75rem;
+}
+
+/* 데스크탑, 모바일 뷰를 flex(유연하게) 만듬으로써 하나의 레이아웃에 요소를 정렬한다.  */
+.element-flex {
+  /* display: flex 속성이 적용된 요소는 flex container가 되고, flex container의 자식 요소는 flex item이 된다.
+   flex container와 flex item은 부모 요소와 자식 요소를 한 세트로 사용하는 ul과 li를 생각하면 쉽게 이해할 수 있다. */
+    display: flex;
+    /* flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none; */
+}
+
+input[id="menuicon"] {
+  display: none;
+}
+input[id="menuicon"] + label {
+  display:block;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+input[id="menuicon"] + label span {
+  display:block;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  border-radius: 30px;
+  background:black;
+  transition: all .35s;
+}
+input[id="menuicon"] + label span:nth-child(1) {
+  top:0;
+}
+input[id="menuicon"] + label span:nth-child(2) {
+  top:50%;
+  transform:translateY(-50%);
+}
+input[id="menuicon"] + label span:nth-child(3) {
+  bottom:0;
+}
+input[id="menuicon"]:checked + label span:nth-child(1){
+  top:50%;
+  transform:translateY(-50%) rotate(45deg);
+}
+input[id="menuicon"]:checked + label span:nth-child(2){
+  opacity:0;
+}
+input[id="menuicon"]:checked + label span:nth-child(3){
+  bottom:50%;
+  transform:translateY(50%) rotate(-45deg);
+}
