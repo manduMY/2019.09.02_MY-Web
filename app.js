@@ -5,7 +5,7 @@ var http = require('http');
 var fs = require('fs');
 var url = require('url');
 
-
+app.set("view engine", 'ejs');
 app.use(express.static(path.join(__dirname, '/')));
  
 

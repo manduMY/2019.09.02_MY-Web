@@ -18,7 +18,10 @@
   }
 } */
 /* Wide */
-
+div#menucontainer span {
+  background-color: #fed136;
+  border-color: #fed136;
+}
 @media screen and (min-width: 1440px) {
 
     /* 데스크탑에서의 반응형 웹css 적용 */
@@ -52,7 +55,7 @@
     #cssSearch { display: none; }
     #aside { display:none; }
     .preview-bar { display:none; }
-      
+    #menucontainer { display:none; }
   
   }
   /* Mobile (Large까지) */
@@ -64,7 +67,7 @@
     #cssSearch { display: none; }
     #aside { display:none; }
     .preview-bar { display:none; }
-      
+    #menucontainer { display:none; }
   
   }
   /* 데스크탑, 모바일 뷰를 가운데 정렬 */
@@ -110,6 +113,7 @@
     height: 20px;
     position: relative;
     cursor: pointer;
+    /* z-index:500; */
   }
   input[id="menuicon"] + label span {
     display:block;
@@ -119,6 +123,7 @@
     border-radius: 30px;
     background:black;
     transition: all .35s;
+    
   }
   input[id="menuicon"] + label span:nth-child(1) {
     top:0;
@@ -130,7 +135,7 @@
   input[id="menuicon"] + label span:nth-child(3) {
     bottom:0;
   }
-  input[id="menuicon"]:checked + label span:nth-child(1){
+  /* input[id="menuicon"]:checked + label span:nth-child(1){
     top:50%;
     transform:translateY(-50%) rotate(45deg);
   }
@@ -140,7 +145,7 @@
   input[id="menuicon"]:checked + label span:nth-child(3){
     bottom:50%;
     transform:translateY(50%) rotate(-45deg);
-  }
+  } */
   form.Searchbtn input[type=text] {
     padding: 10px;
     font-size: 17px;
@@ -170,3 +175,42 @@
     clear: both;
     display: table;
   }
+  
+/* Side 왼쪽 메뉴바 슬라이딩 */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  /* z-index: 1; */
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+#main {
+  transition: margin-left .5s;
+  /* padding: 16px; */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/* /Side 왼쪽 메뉴바 슬라이딩 */

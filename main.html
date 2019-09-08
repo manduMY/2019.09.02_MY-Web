@@ -18,54 +18,69 @@
 
   <!-- main.css 스타일 시트 적용 -->
   <link rel="stylesheet" href="css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
   </head>
-  <body>
+  <body id="main">
      <!-- 메뉴바 -->
     <div>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-          <div class="container">
-              <a class="navbar-brand js-scroll-trigger" href="#page-top">MY HomePage</a>
-              <!-- 모바일의 경우 오른쪽에 3줄의 메뉴바 -->
-              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fa fa-bars"></i>
-              </button>
-              <!-- /모바일의 경우 오른쪽에 3줄의 메뉴바 -->
-              <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link active js-scroll-trigger" href="#services">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#">포트폴리오</a>
-                  </li>
-                  <li class="nav-item dropdown"><a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">과목 정리<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">JAVA</a></li>
-                      <li><a href="#">모바일응용설계</a></li>
-                      <li><a href="#">웹프로그래밍</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#">웹페이지 만들면서 공부한 자료</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-                  </li>
-                </ul>
-                <!-- 검색 기능 -->
-                <form class="Searchbtn form-inline" id="cssSearch">
-                  <input class="form-control" type="text" placeholder="Search">
-                  <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
-                </form>
-                <!-- /검색 기능 -->
-              </div>
-            </div>
+      <!-- menu바 아이콘 애니메이션 기능 추가 x자로 변하는거 -->
+      <div id="mySidenav" class="sidenav">
+          <a href="#">포트폴리오</a>
+          <li class="nav-item dropdown"><a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">과목 정리<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">JAVA</a></li>
+              <li><a href="#">모바일응용설계</a></li>
+              <li><a href="#">웹프로그래밍</a></li>
+            </ul>
+          </li>
+          <a href="#">웹페이지 만들면서 공부한 자료</a>
+        </div>
+
         
+      <div id="menucontainer">
+      <input type="checkbox" id="menuicon">
+        <label for="menuicon">
+          <span class="menubar1"></span>
+          <span class="menubar2"></span>
+          <span class="menubar3"></span>
+        </label>
+      </div>
       
+        <div class="container">            
+          <a class="navbar-brand js-scroll-trigger" href="#page-top">MY HomePage</a>
+            <!-- 모바일의 경우 오른쪽에 3줄의 메뉴바 -->
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              Menu
+              <i class="fa fa-bars"></i>
+            </button>
+            <!-- /모바일의 경우 오른쪽에 3줄의 메뉴바 -->
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active js-scroll-trigger" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              </li>
+            </ul>
+            <!-- 검색 기능 -->
+            <form class="Searchbtn form-inline" id="cssSearch">
+              <input class="form-control" type="text" placeholder="Search">
+              <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <!-- /검색 기능 -->
+          </div>
+        </div>
     </nav>
   </div>
 <!-- Header -->
@@ -465,7 +480,7 @@
   <div class="container">
     <div class="row align-items-center">
       <div class="col-md-4">
-        <span class="copyright">Copyright &copy; Your Website 2019</span>
+        <span class="copyright">web &copy; Your Website 2019</span>
       </div>
       <div class="col-md-4">
         <ul class="list-inline social-buttons">
@@ -489,32 +504,95 @@
       <div class="col-md-4">
         <ul class="list-inline quicklinks">
           <li class="list-inline-item">
-            <a href="#">Privacy Policy</a>
+            <a href="#">web</a>
           </li>
           <li class="list-inline-item">
-            <a href="#">Terms of Use</a>
+            <a href="#">web</a>
           </li>
         </ul>
       </div>
     </div>
   </div>
 </footer>
+<!--Navbar-->
+<nav class="navbar navbar-light amber lighten-4 mb-4">
 
+    
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+      aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon1"><span></span><span></span><span></span></div>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+      <!-- Links -->
+  
+    </div>
+    <!-- Collapsible content -->
+  
+  </nav>
+  <!--/.Navbar-->
 <!-- 오른쪽의 고정바 -->
     <div id="aside">
       <button class="btn btn-primary btn-lg">Home</button>
     </div>
 <!-- /오른쪽의 고정바 -->
-<!-- menu바 아이콘 애니메이션 기능 추가 x자로 변하는거 -->
-<input type="checkbox" id="menuicon">
-<label for="menuicon">
-  <span></span>
-  <span></span>
-  <span></span>
-</label>
 
+<script>
+    $('#menucontainer').toggle(function() {
+      openNav();
+      $(".menubar1").css("top","50%");
+      $(".menubar1").css("transform","translateY(-50%) rotate(45deg)");
+      $(".menubar2").css("opacity","0");
+      $(".menubar3").css("bottom","50%");
+      $(".menubar3").css("transform","translateY(50%) rotate(-45deg)");
+      // 메뉴를 열때 본문을 보기 편하게 작게 만들어 준다
+      // $( "#main" ).css( "padding", "16px" );
+      }, function() { 
+      closeNav();
+      $(".menubar1").css("top","0");
+      $(".menubar1").css("transform","translateY(0)");
+      $(".menubar2").css("opacity","1");
+      $(".menubar3").css("bottom","0");
+      $(".menubar3").css("transform","translateY(0)");
+       
+      // 메뉴를 닫을 때 본문을 원래 크기로 원상복귀 시킨다
+      // $( "#main" ).css( "padding", "0px" );
+    });
+</script>
+<script>
+    // 메뉴를 열때 메뉴를 슬라이딩 해서 보여준다.
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    // 메뉴를 닫을때 메뉴를 슬라이딩 해서 가려준다.
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      document.body.style.backgroundColor = "white";
+    }
+    </script>
 <!-- Bootstrap core JavaScript -->
+<!-- 위에 있는 jquery와 중복이 되어 css 적용이 안됬었음 css 적용 안되면 둘중 하나 주석 달자 -->
 <script src="vendor/jquery/jquery.min.js"></script>
+
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Plugin JavaScript -->
