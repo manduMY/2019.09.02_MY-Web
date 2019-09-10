@@ -1,26 +1,9 @@
-/* #aside {position:absolute; position:fixed; top:100px;right:0;z-index:3;width:100px;}
-#cssSearch {position:absolute;right:0;top:50%;transform:translateY(-50%);} */
-/* 모바일에선 검색기능을 보이지 않게 한다.(반응형 웹) */
-/* @media screen and (max-width: 426px) {
-  #cssSearch { display: none; }
-  #aside { display:none; }
-  .preview-bar { display:none; }
-} */
-
-/* 데스크탑에서의 반응형 웹css 적용 */
-/* @media screen and (max-width: 769px) {
-  #mob_desk {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-  }
-} */
-/* Wide */
 div#menucontainer span {
   background-color: #fed136;
   border-color: #fed136;
+}
+#menucontainer {
+  margin-top:10px;
 }
 @media screen and (min-width: 1440px) {
 
@@ -125,13 +108,16 @@ div#menucontainer span {
     transition: all .35s;
     
   }
+  /* menuicon의 맨 위 바 */
   input[id="menuicon"] + label span:nth-child(1) {
     top:0;
   }
+  /* menuicon의 가운데 바 */
   input[id="menuicon"] + label span:nth-child(2) {
     top:50%;
     transform:translateY(-50%);
   }
+  /* menuicon의 맨아래 바 */
   input[id="menuicon"] + label span:nth-child(3) {
     bottom:0;
   }
@@ -190,23 +176,46 @@ div#menucontainer span {
   transition: 0.5s;
   padding-top: 60px;
 }
-
+@media (max-width: 980px){
+  .sidenav a {
+      font-size: 1em;
+      width: 100%;
+      height: 50px;
+      text-align: left;
+      padding: 40px 40px;
+      
+  }
+}
+.sidenav li {
+  /* 이걸 해줘야 arrow 화살표시가 나온다. sub 목록에 있는 화살표시도 나오게 한다. */
+  padding: 20px 20px;
+  width: 350px;
+  height: 25px;
+}
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  /* sidenav의 메뉴 목록의 폰트를 지정하고 효과를 넣어준다. */
+  font-family: Montserrat,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  font-weight: 300;
+  font-size: 20px;
   text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+  color: white;
+  transition: 0.2s;
+  letter-spacing: 1px;
+  text-align: left;
+  cursor: pointer;
 }
-
 .sidenav a:hover {
-  color: #f1f1f1;
+  /* sidenav의 메뉴 목록에 마우스를 가져다대면 글자가 커지고 빨간색으로 변한다. */
+  color: #f06363;
+  letter-spacing: 2px;
 }
-
+strong {
+  /* 스트롱으로 감싼 sidenav안의 home 글자를 두껍게 한다 */
+  font-weight: bold;
+}
 #main {
+  /* sidenav를 클릭 시 main 화면에 transition 효과를 준다 밀려나갈 때 천천히 밀려나감*/
   transition: margin-left .5s;
-  /* padding: 16px; */
 }
 
 @media screen and (max-height: 450px) {
@@ -214,3 +223,27 @@ div#menucontainer span {
   .sidenav a {font-size: 18px;}
 }
 /* /Side 왼쪽 메뉴바 슬라이딩 */
+
+/* 상위 카테고리의 화살표시의 css 속성 */
+.sidenav ul :not(collapsed) .arrow:before,
+.sidenav li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+  color:white;
+}
+/* 하위 카테고리의 화살표시의 css 속성 */
+.sidenav ul .sub-menu li:before,
+.sidenav li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  color:white;
+}

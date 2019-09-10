@@ -12,6 +12,7 @@
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/agency.min.css" rel="stylesheet">
@@ -26,16 +27,36 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
       <!-- menu바 아이콘 애니메이션 기능 추가 x자로 변하는거 -->
       <div id="mySidenav" class="sidenav">
-          <a href="#">포트폴리오</a>
-          <li class="nav-item dropdown"><a class="nav-link js-scroll-trigger dropdown-toggle" data-toggle="dropdown" href="#">과목 정리<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">JAVA</a></li>
-              <li><a href="#">모바일응용설계</a></li>
-              <li><a href="#">웹프로그래밍</a></li>
+          <ul>
+              <li class="active"><a href="#"><i class="fa fa-home"></i><strong> Home</strong></a></li>
+              <li><a href="#"><i class="fa fa-suitcase"></i> Portfolio </a></li>
+
+              <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                  <a href="#"><i class="fa fa-gift fa-lg"></i> Project <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li class="active"><a href="#">JAVA</a></li>
+                    <li><a href="#">모바일응용설계</a></li>
+                    <li><a href="#">웹프로그래밍</a></li>
+                </ul>
+
+              <li><a href="#"><i class="fa fa-cog"></i> Services </a></li>
+              <li><a href="#"><i class="fa fa-user"></i> About </a></li>
+              <li><a href="#"><i class="fa fa-envelope"></i> Contact </a></li>
             </ul>
+          <!-- <li><a href="#"><strong>Portfolio</strong></a></li>
+          <li><a class="link-item" href="#">과목 정리</a>
+            <ul class="sub_category">
+              <li><a class="link_sub_item" href="#">JAVA</a></li>
+              <li><a class="link_sub_item" href="#">모바일응용설계</a></li>
+              <li><a class="link_sub_item" href="#">웹프로그래밍</a></li>
+            </ul>
+            <span class="tt-cate-toggle">
+              <i class="icon icon-angle-down" style="color:#f1f1f1"></i>
+            </span>
           </li>
-          <a href="#">웹페이지 만들면서 공부한 자료</a>
-        </div>
+          <li><a href="#">Materials studied in website creation</a></li> -->
+      </div>
 
         
       <div id="menucontainer">
@@ -578,8 +599,8 @@
 <script>
     // 메뉴를 열때 메뉴를 슬라이딩 해서 보여준다.
     function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
+      document.getElementById("mySidenav").style.width = "390px";
+      document.getElementById("main").style.marginLeft = "390px";
       document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     }
     // 메뉴를 닫을때 메뉴를 슬라이딩 해서 가려준다.
