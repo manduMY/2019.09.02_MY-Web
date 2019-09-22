@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY HomePage</title>
+    <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/agency.min.css" rel="stylesheet">
+
+  <!-- main.css 스타일 시트 적용 -->
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  </head>
+  <body id="main">
+     <!-- 메뉴바 -->
+    <div>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <!-- menu바 아이콘 애니메이션 기능 추가 x자로 변하는거 -->
+      <div id="mySidenav" class="sidenav">
+          <ul>
+              <li class="active"><a href=<%="../home/main"%>><i class="fa fa-home"></i><strong> Home</strong></a></li>
+              <li><a href=<%="../contacts/index"%>><i class="fas fa-atom"></i> Contacts</a></li>
+              <li><a href=<%="../menu/webstudy"%>><i class="fas fa-atom"></i> Webstudy</a></li>
+              <li><a href="#"><i class="fa fa-suitcase"></i> Portfolio </a></li>
+
+              <li  data-toggle="collapse" data-target="#products" class="collapsed active">
+                  <a href="#"><i class="fa fa-gift fa-lg"></i> Project <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li class="active"><a href="#">JAVA</a></li>
+                    <li><a href="#">모바일응용설계</a></li>
+                    <li><a href="#">웹프로그래밍</a></li>
+                </ul>
+
+              <li><a href="#"><i class="fa fa-cog"></i> Services </a></li>
+              <li><a href="#"><i class="fa fa-user"></i> About </a></li>
+              <li><a href="#"><i class="fa fa-envelope"></i> Contact </a></li>
+            </ul>
+          <!-- <li><a href="#"><strong>Portfolio</strong></a></li>
+          <li><a class="link-item" href="#">과목 정리</a>
+            <ul class="sub_category">
+              <li><a class="link_sub_item" href="#">JAVA</a></li>
+              <li><a class="link_sub_item" href="#">모바일응용설계</a></li>
+              <li><a class="link_sub_item" href="#">웹프로그래밍</a></li>
+            </ul>
+            <span class="tt-cate-toggle">
+              <i class="icon icon-angle-down" style="color:#f1f1f1"></i>
+            </span>
+          </li>
+          <li><a href="#">Materials studied in website creation</a></li> -->
+      </div>
+
+        
+      <div id="menucontainer">
+      <input type="checkbox" id="menuicon">
+        <label for="menuicon">
+          <span class="menubar1"></span>
+          <span class="menubar2"></span>
+          <span class="menubar3"></span>
+        </label>
+      </div>
+      
+        <div class="container">            
+          <a class="navbar-brand js-scroll-trigger" href="#page-top">MY HomePage</a>
+            <!-- 모바일의 경우 오른쪽에 3줄의 메뉴바 -->
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              Menu
+              <i class="fa fa-bars"></i>
+            </button>
+            <!-- /모바일의 경우 오른쪽에 3줄의 메뉴바 -->
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+              <li class="nav-item">
+                <a class="nav-link active js-scroll-trigger" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              </li>
+            </ul>
+            <!-- 검색 기능 -->
+            <form class="Searchbtn form-inline" id="cssSearch">
+              <input class="form-control" type="text" placeholder="Search">
+              <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <!-- /검색 기능 -->
+          </div>
+        </div>
+    </nav>
+  </div>
+<!-- Header -->
+<header class="masthead">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-lead-in">Web 만들면서 공부했던 자료들</div>
+      <div class="intro-heading text-uppercase">게시판 기능, 파일 업로드 기능</div>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#blackboard">게시판 바로가기</a>
+    </div>
+  </div>
+</header>
+
+<!-- Team -->
+<section class="bg-light page-section" id="blackboard">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">자료 정리</h2>
+          <h3 class="section-subheading text-muted">JavaScript, html, css</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="../img/team/1.jpg" alt="">
+            <h4>Kay Garland</h4>
+            <p class="text-muted">Lead Designer</p>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="../img/team/2.jpg" alt="">
+            <h4>Larry Parker</h4>
+            <p class="text-muted">Lead Marketer</p>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="team-member">
+            <img class="mx-auto rounded-circle" src="../img/team/3.jpg" alt="">
+            <h4>Diana Pertersen</h4>
+            <p class="text-muted">Lead Developer</p>
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-4">
+        <span class="copyright">web &copy; Your Website 2019</span>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-inline social-buttons">
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <a href="#">web</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#">web</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!--Navbar-->
+<nav class="navbar navbar-light amber lighten-4 mb-4">
+
+    
+  
+    <!-- Collapse button -->
+    <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+      aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon1"><span></span><span></span><span></span></div>
+    </button>
+  
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent20">
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+      <!-- Links -->
+  
+    </div>
+    <!-- Collapsible content -->
+  
+  </nav>
+  <!--/.Navbar-->
+<!-- 오른쪽의 고정바 -->
+    <div id="aside">
+      <button class="btn btn-primary btn-lg">Home</button>
+    </div>
+<!-- /오른쪽의 고정바 -->
+
+<script>
+    $('#menucontainer').toggle(function() {
+      openNav();
+      $(".menubar1").css("top","50%");
+      $(".menubar1").css("transform","translateY(-50%) rotate(45deg)");
+      $(".menubar2").css("opacity","0");
+      $(".menubar3").css("bottom","50%");
+      $(".menubar3").css("transform","translateY(50%) rotate(-45deg)");
+      // 메뉴를 열때 본문을 보기 편하게 작게 만들어 준다
+      // $( "#main" ).css( "padding", "16px" );
+      }, function() { 
+      closeNav();
+      $(".menubar1").css("top","0");
+      $(".menubar1").css("transform","translateY(0)");
+      $(".menubar2").css("opacity","1");
+      $(".menubar3").css("bottom","0");
+      $(".menubar3").css("transform","translateY(0)");
+       
+      // 메뉴를 닫을 때 본문을 원래 크기로 원상복귀 시킨다
+      // $( "#main" ).css( "padding", "0px" );
+    });
+</script>
+<script>
+    // 메뉴를 열때 메뉴를 슬라이딩 해서 보여준다.
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "390px";
+      document.getElementById("main").style.marginLeft = "390px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    // 메뉴를 닫을때 메뉴를 슬라이딩 해서 가려준다.
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      document.body.style.backgroundColor = "white";
+    }
+    </script>
+<!-- Bootstrap core JavaScript -->
+<!-- 위에 있는 jquery와 중복이 되어 css 적용이 안됬었음 css 적용 안되면 둘중 하나 주석 달자 -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Contact form JavaScript -->
+<script src="../js/jqBootstrapValidation.js"></script>
+<script src="../js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="../js/agency.min.js"></script>
+
+<!-- Contact form JavaScript -->
+<script src="../js/jqBootstrapValidation.js"></script>
+<script src="../js/contact_me.js"></script>
+
+  </body>
+</html>
