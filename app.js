@@ -27,11 +27,12 @@ db.on("error",function(err){
   console.log("DB ERROR : ", err);
 });
 
-// ejs 접근
+// Other Settings
 app.set("view engine", 'ejs');
 app.use(express.static(path.join(__dirname,'/')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(methodOverride("_method"));
 
 // DB schema
 var contactSchema = mongoose.Schema({
@@ -56,7 +57,7 @@ app.get('/menu/webstudy', (req, res) => {
   })
 });
 // contacts/index
-app.get('/contacts/index', (req, res) => {
+app.get('/contacts', (req, res) => {
   Contact.find({}, function(err, contacts){
     if(err) return res.json(err);
     res.render("contacts/index", {contacts:contacts});
@@ -67,8 +68,8 @@ app.get("/contacts/new", function(req,res){
   res.render("contacts/new");
 })
 // Contacts/create
-app.post("contacts", function(req,res){
-  Contact.create(req,body, function(err,contact){
+app.post("/contacts", function(req, res){
+  Contact.create(req.body, function(err, contact){
     if(err) return res.json(err);
     res.redirect("/contacts");
   });
