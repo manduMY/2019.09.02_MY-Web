@@ -1,0 +1,36 @@
+<script>
+    $('#menucontainer').toggle(function() {
+      openNav();
+      $(".menubar1").css("top","50%");
+      $(".menubar1").css("transform","translateY(-50%) rotate(45deg)");
+      $(".menubar2").css("opacity","0");
+      $(".menubar3").css("bottom","50%");
+      $(".menubar3").css("transform","translateY(50%) rotate(-45deg)");
+      // 메뉴를 열때 본문을 보기 편하게 작게 만들어 준다
+      // $( "#main" ).css( "padding", "16px" );
+      }, function() { 
+      closeNav();
+      $(".menubar1").css("top","0");
+      $(".menubar1").css("transform","translateY(0)");
+      $(".menubar2").css("opacity","1");
+      $(".menubar3").css("bottom","0");
+      $(".menubar3").css("transform","translateY(0)");
+       
+      // 메뉴를 닫을 때 본문을 원래 크기로 원상복귀 시킨다
+      // $( "#main" ).css( "padding", "0px" );
+    });
+</script>
+<script>
+    // 메뉴를 열때 메뉴를 슬라이딩 해서 보여준다.
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "390px";
+      document.getElementById("main").style.marginLeft = "390px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    // 메뉴를 닫을때 메뉴를 슬라이딩 해서 가려준다.
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      document.body.style.backgroundColor = "white";
+    }
+</script>
