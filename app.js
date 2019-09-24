@@ -29,79 +29,28 @@ db.on("error",function(err){
 
 // Other Settings
 app.set("view engine", 'ejs');
-app.use(express.static(path.join(__dirname,'/')));
+app.use(express.static(__dirname+"/public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 
-// DB schema
-var contactSchema = mongoose.Schema({
-  name:{type:String, required:true, unique:true},
-  email:{type:String},
-  phone:{type:String}
-});
-var Contact = mongoose.model("contact",contactSchema);
+// Routes
+app.use("/", require("./routes/home"));
+app.use("/contacts", require("./routes/contacts"));
+app.use("/posts", require("./routes/posts"));
+// Render ejs Page
+// app.get('/home', function(req,res){
+//   res.render("home/index");
+// });
 
-app.get('/', function(req,res){
-  res.redirect('/home');
-});
-app.get('/home', function(req,res){
-  res.render("home/index");
-});
-
-app.get('/home/main', function(req, res){
-  res.render('home/main');
-});
-app.get('/menu/webstudy', (req, res) => {
-  res.render('menu/webstudy', {
-  })
-});
-// contacts - index
-app.get('/contacts', (req, res) => {
-  Contact.find({}, function(err, contacts){
-    if(err) return res.json(err);
-    res.render("contacts/index", {contacts:contacts});
-  });
-});
-// Contacts - new
-app.get("/contacts/new", function(req,res){
-  res.render("contacts/new");
-})
-// Contacts - create
-app.post("/contacts", function(req, res){
-  Contact.create(req.body, function(err, contact){
-    if(err) return res.json(err);
-    res.redirect("/contacts");
-  });
-});
-// Contacts - show
-app.get("/contacts/:id", function(req, res){
-  Contact.findOne({_id:req.params.id}, function(err, contact){
-    if(err) return res.json(err);
-    res.render("contacts/show", {contact:contact});
-  });
-});
-// Contacts - edit
-app.get("/contacts/:id/edit", function(req, res){
-  Contact.findOne({_id:req.params.id}, function(err,contact){
-    if(err) return res.json(err);
-    res.render("contacts/edit", {contact:contact});
-  });
-});
-// Contacts - update
-app.put("/contacts/:id", function(req,res){
-  Contact.findOneAndUpdate({_id:req.params.id}, req.body, function(err, contact){
-    if(err) return res.json(err);
-    res.redirect("/contacts/"+req.params.id);
-  });
-});
-// Contacts - destroy
-app.delete("/contacts/:id", function(req, res){
-  Contact.deleteOne({_id:req.params.id}, function(err, contact){
-    if(err) return res.json(err);
-    res.redirect("/contacts");
-  });
-});
+// app.get('/home/main', function(req, res){
+//   res.render('home/main');
+// });
+// app.get('/menu/webstudy', (req, res) => {
+//   res.render('menu/webstudy', {
+//   })
+// });
+// port setting
 
 app.listen(3000, function(){
   console.log('Server On!');

@@ -16,20 +16,24 @@
   </div>
 </header>
 
-<nav>
-    <div>Contact Book</div>
-    <ul>
-      <li><a href="/contacts">Index</a></li>
-      <li><a href="/contacts/new">New</a></li>
-    </ul>
-  </nav>
+<nav class="navbar navbar-default">
+  <div class="container">
+   <div class="navbar-header">
+    <div class="navbar-brand">Contact Book</div>
+   </div>
+   <ul class="nav navbar-nav">
+    <li><a href="/contacts">Index</a></li>
+    <li><a href="/contacts/new">New</a></li>
+   </ul>
+  </div>
+ </nav>
 
-<div class="contact contact-show">
+<div class="container contact contact-show">
   <div class="contact-menu">
-    <a href="/contacts">Back</a>
-    <a href="/contacts/<%= contact._id %>/edit">Edit</a>
+    <a class="btn btn-primary" href="/contacts">Back</a>
+    <a class="btn btn-primary" href="/contacts/<%= contact._id %>/edit">Edit</a>
     <form action="/contacts/<%= contact._id %>?_method=delete" method="post">
-        <a href="#" onclick="confirm('삭제 하시겠습니까?')?this.parentElement.submit():null;">Delete</a>
+        <a class="btn btn-primary" href="#" onclick="confirm('삭제 하시겠습니까?')?this.parentElement.submit():null;">Delete</a>
     </form>
   </div>
   <h2>Show</h2>

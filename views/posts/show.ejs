@@ -10,37 +10,45 @@
   <div class="container">
     <div class="intro-text">
       <div class="intro-lead-in">Web 만들면서 공부했던 자료들</div>
-      <div class="intro-heading text-uppercase">주소록 기능, 7 action 적용 CRUD</div>
+      <div class="intro-heading text-uppercase">게시판 기능, 파일 업로드 기능</div>
       <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#blackboard">게시판 바로가기</a>
     </div>
   </div>
 </header>
 
-
-<nav class="navbar navbar-default">
-  <div class="container">
-   <div class="navbar-header">
-    <div class="navbar-brand">Contact Book</div>
-   </div>
-   <ul class="nav navbar-nav">
-    <li><a href="/contacts">Index</a></li>
-    <li><a href="/contacts/new">New</a></li>
-   </ul>
-  </div>
- </nav>
-
-
-<div class="container contact contact-index">
-  <h2>Index</h2>
-  <ul class="list-group">
-    <% contacts.forEach(function(contact) { %>
-      <li class="list-group-item">
-        <a href="/contacts/<%= contact._id %>"><%= contact.name %></a>
-      </li>
-    <% }) %>
-  </ul>
-</div>
-
+<!-- sector -->
+ <div class="container post post-show">
+<!-- header -->
+ <h2>Board</h2>
+<!-- /header -->
+<div class="buttons">
+        <a class="btn btn-primary" href="/posts">Back</a>
+        <a class="btn btn-primary" href="/posts/<%= post._id %>/edit">Edit</a>
+        <form action="/posts/<%= post._id %>?_method=delete" method="post">
+         <a class="btn btn-primary" href="#" onclick="confirm('삭제 하겠습니까 ??')?this.parentElement.submit():null;">Delete</a>
+        </form>
+       </div>
+    
+       <div class="contentBox">
+        <h3 class="contentBoxTop"><%= post.title %></h3>
+        <div class="row">
+         
+         <div class="col-sm-8 col-sm-pull-4">
+          <div class="post-body"><%= post.body %></div>
+         </div> <!-- col end-->
+         <div class="col-sm-4 col-sm-push-8">
+            <div class="post-info">
+             <div><span>Created</span> : <%= post.createdDate %> <%= post.createdTime %></div>
+             <% if(post.updatedAt) { %>
+              <div><span>Updated</span> : <%= post.updatedDate %> <%= post.updatedTime %></div>
+             <% } %>
+            </div> <!-- post-info end -->
+           </div> <!-- col end-->
+        </div> <!-- row end -->
+       </div> <!-- post-container end -->
+    
+      </div> <!-- container end -->
+<!-- /sector -->
 <!-- Footer -->
 <footer class="footer">
   <div class="container">

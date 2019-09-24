@@ -10,37 +10,48 @@
   <div class="container">
     <div class="intro-text">
       <div class="intro-lead-in">Web 만들면서 공부했던 자료들</div>
-      <div class="intro-heading text-uppercase">주소록 기능, 7 action 적용 CRUD</div>
+      <div class="intro-heading text-uppercase">게시판 기능, 파일 업로드 기능</div>
       <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#blackboard">게시판 바로가기</a>
     </div>
   </div>
 </header>
 
-
-<nav class="navbar navbar-default">
-  <div class="container">
-   <div class="navbar-header">
-    <div class="navbar-brand">Contact Book</div>
+ <div class="container post post-index">
+<!-- header -->
+ <h2>Board</h2>
+<!-- /header -->
+<div class="buttons">
+    <a class="btn btn-primary" href="/posts/new">New</a>
    </div>
-   <ul class="nav navbar-nav">
-    <li><a href="/contacts">Index</a></li>
-    <li><a href="/contacts/new">New</a></li>
-   </ul>
-  </div>
- </nav>
 
+   <table class="table table-striped posts">
+    <thead>
+     <tr>
+      <th class="title">Title</th>
+      <th class="date">Date</th>
+     </tr>
+    </thead>
+    <tbody>
+     <% if(posts == null || posts.length == 0){ %>
+      <tr>
+       <td class="noData" colspan=100> There is no data to show :( </td>
+      </tr>
+     <% } %>
+     <% posts.forEach(function(post) { %>
+      <tr>
+       <td class="title">
+        <a href="/posts/<%= post._id %>"><div><%= post.title %></div></a>
+       </td>
+       <td class="date">
+        <%= post.createdDate %>
+       </td>
+      </tr>
+     <% }) %>
+    </tbody>
+   </table>
+  </div> <!-- container end -->
 
-<div class="container contact contact-index">
-  <h2>Index</h2>
-  <ul class="list-group">
-    <% contacts.forEach(function(contact) { %>
-      <li class="list-group-item">
-        <a href="/contacts/<%= contact._id %>"><%= contact.name %></a>
-      </li>
-    <% }) %>
-  </ul>
 </div>
-
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
