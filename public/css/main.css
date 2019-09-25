@@ -123,7 +123,9 @@ div#menucontainer span {
       margin-right: -.75rem;
       margin-left: -.75rem;
   }
-  
+  #mainNav {
+    top:48px;
+  }
   /* 데스크탑, 모바일 뷰를 flex(유연하게) 만듬으로써 하나의 레이아웃에 요소를 정렬한다.  */
   .element-flex {
     /* display: flex 속성이 적용된 요소는 flex container가 되고, flex container의 자식 요소는 flex item이 된다.

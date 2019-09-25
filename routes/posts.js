@@ -4,9 +4,9 @@ var Post    = require("../models/Post");
 
 // Index 
 router.get("/", function(req, res){
-  Post.find({})                  // 1
-  .sort("-createdAt")            // 1
-  .exec(function(err, posts){    // 1
+  Post.find({})
+  .sort("-createdAt")
+  .exec(function(err, posts){
     if(err) return res.json(err);
     res.render("posts/index", {posts:posts});
   });
@@ -43,7 +43,7 @@ router.get("/:id/edit", function(req, res){
 
 // update
 router.put("/:id", function(req, res){
-  req.body.updatedAt = Date.now(); // 2
+  req.body.updatedAt = Date.now();
   Post.findOneAndUpdate({_id:req.params.id}, req.body, function(err, post){
     if(err) return res.json(err);
     res.redirect("/posts/"+req.params.id);
