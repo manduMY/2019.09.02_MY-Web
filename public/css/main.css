@@ -1,3 +1,40 @@
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+
+ /* 모바일에선 검색기능을 보이지 않게 한다.(반응형 웹) */
+  
+  
+  .deskmobile {
+    display:none;
+  }
+  .login {
+    display:none;
+  }
+  .preview-bar {
+    height:55px;
+  }
+
+}
+/* Mobile (Large까지) */
+
+@media screen and (max-width: 425px) {
+
+  /* 모바일에선 검색기능을 보이지 않게 한다.(반응형 웹) */
+  
+  
+  .DesktopMobile {
+    display:none;
+  }
+  .login {
+    display:none;
+  }
+    
+  .preview-bar {
+    height:55px;
+  }
+
+}
 div#menucontainer span {
   background-color: #fed136;
   border-color: #fed136;
@@ -10,7 +47,7 @@ div#menucontainer span {
     /* 데스크탑에서의 반응형 웹css 적용 */
     /* 고정바, 검색창 css */
     #aside {position:absolute; position:fixed; top:100px;right:0;z-index:3;width:100px;}
-    #cssSearch {position:absolute;right:0;top:50%;transform:translateY(-50%);}
+    #cssSearch {position:absolute;right:0;top:100px;transform:translateY(-50%);}
      
    
       
@@ -52,6 +89,17 @@ div#menucontainer span {
     .preview-bar { display:none; }
     #menucontainer { display:none; }
   
+  }
+  .border-bottom-primary {
+    border-bottom: 3px #dd3d31 solid;
+  }
+  
+  .iframe-preview {
+    position: absolute;
+    height: calc(100% - 55px);
+    width: 100%;
+    border: none;
+    margin-top: 55px;
   }
   /* 데스크탑, 모바일 뷰를 가운데 정렬 */
   .justify-content-center {

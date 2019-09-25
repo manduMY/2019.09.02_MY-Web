@@ -38,19 +38,7 @@ app.use(methodOverride("_method"));
 app.use("/", require("./routes/home"));
 app.use("/contacts", require("./routes/contacts"));
 app.use("/posts", require("./routes/posts"));
-// Render ejs Page
-// app.get('/home', function(req,res){
-//   res.render("home/index");
-// });
-
-// app.get('/home/main', function(req, res){
-//   res.render('home/main');
-// });
-// app.get('/menu/webstudy', (req, res) => {
-//   res.render('menu/webstudy', {
-//   })
-// });
-// port setting
+app.use("/users", require("./routes/users"));
 
 app.listen(3000, function(){
   console.log('Server On!');
