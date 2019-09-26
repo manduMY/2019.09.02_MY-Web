@@ -474,3 +474,10 @@ form label{
   margin-top: 5px;
   margin-bottom: 11px;
  }
+
+ /* home style */
+ .home-login{ /* 1 */
+  /* max-width: 330px; */
+  font-family: 'Open Sans', sans-serif;
+  /* font-size: 12px; */
+ }

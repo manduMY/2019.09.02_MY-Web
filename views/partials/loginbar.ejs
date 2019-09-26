@@ -22,8 +22,13 @@
                 </ul>
               </div>
               <div class="col text-right login">
-                <a href="/users" class="btn btn-primary btn-sm mr-2 d-none d-md-inline-block">Users</a>
+                <% if(isAuthenticated){ %>
+                <a href="/users/<%= currentUser.username %>" class="btn btn-primary btn-sm mr-2 d-none d-md-inline-block">My Account</a>
+                <a href="/logout" class="btn btn-primary btn-sm mr-2 d-none d-md-inline-block">Logout</a>
+                <% } else { %>
                 <a href="/users/new" class="btn btn-primary btn-sm mr-2 d-none d-md-inline-block">Sign up</a>
+                <a href="/login" class="btn btn-primary btn-sm mr-2 d-none d-md-inline-block">Login</a>
+                <% } %>
               </div>
             </div>
           </div>
