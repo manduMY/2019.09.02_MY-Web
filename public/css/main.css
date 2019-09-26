@@ -42,11 +42,12 @@ div#menucontainer span {
 #menucontainer {
   margin-top:10px;
 }
+
 @media screen and (min-width: 1440px) {
 
     /* 데스크탑에서의 반응형 웹css 적용 */
     /* 고정바, 검색창 css */
-    #aside {position:absolute; position:fixed; top:100px;right:0;z-index:3;width:100px;}
+    #aside {position:absolute; position:fixed; top:50%;right:0;z-index:3;width:100px;}
     #cssSearch {position:absolute;right:0;top:100px;transform:translateY(-50%);}
      
    
@@ -55,12 +56,12 @@ div#menucontainer span {
   }
   /* Normal */
   
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1440px) { /*원래 1280px 였음.*/
   
     /* 데스크탑에서의 반응형 웹css 적용 */
     /* 고정바, 검색창 css */
-    #aside {position:absolute; position:fixed; top:100px;right:0;z-index:3;width:100px;}
-    #cssSearch {position:absolute;right:0;top:50%;transform:translateY(-50%);}
+    #aside {position:absolute; position:fixed; top:50%;right:0;z-index:3;width:100px;}
+    #cssSearch { display: none; }
   
     
     
@@ -72,7 +73,7 @@ div#menucontainer span {
   
    /* 모바일에선 검색기능을 보이지 않게 한다.(반응형 웹) */
     
-    #cssSearch { display: none; }
+    
     #aside { display:none; }
     .preview-bar { display:none; }
     #menucontainer { display:none; }
@@ -321,27 +322,6 @@ form label{
  .buttons form{
   display: inline-block;
  }
- .buttons .btn-primary{
-  min-width: 55px;
-  color: #165751;
-  border: 1px solid #ccc;
-  border-right: 1px solid #aaa;
-  border-bottom: 1px solid #aaa;
-  border-radius: 4px;
-  padding: 5px 10px;
-  background-color: #f5f5f5;
-  font-size: 0.8em;
-  font-weight: bold;
- }
- .buttons .btn-primary:hover{
-  text-decoration: none;
-  position: relative;
-  top: 1px;
-  left: 1px;
-  border: 1px solid #ccc;
-  border-top: 1px solid #aaa;
-  border-left: 1px solid #aaa;
- }
  .contentBox{
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -437,7 +417,7 @@ form label{
  }
  .post-new,
  .post-edit{
-  max-width: 520px;
+  /* max-width: 520px; */
  }
 /* user style */
 .user {
@@ -480,4 +460,30 @@ form label{
   /* max-width: 330px; */
   font-family: 'Open Sans', sans-serif;
   /* font-size: 12px; */
+ }
+
+
+ /* ... */
+.ellipsis{
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ }
+ /* ... */
+ .post-index .posts{
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  table-layout: fixed;
+ }
+ /* ... */
+ .post .posts .author{
+  text-align: center;
+  width: 80px;
+ }
+ /* ... */
+
+ .ellipsis {
+   color: #212529;
  }

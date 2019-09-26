@@ -22,34 +22,40 @@
  <h2>Board</h2>
 <!-- /header -->
 <div class="buttons">
-    <a class="btn btn-primary" href="/posts/new">New</a>
+    <% if(isAuthenticated){ %>
+     <a class="btn btn-primary" href="/posts/new">New</a>
+    <% } %>
    </div>
 
    <table class="table table-striped posts">
-    <thead>
-     <tr>
-      <th class="title">Title</th>
-      <th class="date">Date</th>
-     </tr>
-    </thead>
-    <tbody>
-     <% if(posts == null || posts.length == 0){ %>
-      <tr>
-       <td class="noData" colspan=100> There is no data to show :( </td>
-      </tr>
-     <% } %>
-     <% posts.forEach(function(post) { %>
-      <tr>
-       <td class="title">
-        <a href="/posts/<%= post._id %>"><div><%= post.title %></div></a>
-       </td>
-       <td class="date">
-        <%= post.createdDate %>
-       </td>
-      </tr>
-     <% }) %>
-    </tbody>
-   </table>
+      <thead>
+       <tr>
+        <th class="title">Title</th>
+        <th class="author">Author</th>
+        <th class="date">Date</th>
+       </tr>
+      </thead>
+      <tbody>
+       <% if(posts == null || posts.length == 0){ %>
+        <tr>
+         <td class="noData" colspan=100> There is no data to show :( </td>
+        </tr>
+       <% } %>
+       <% posts.forEach(function(post) { %>
+        <tr>
+         <td class="title">
+          <a href="/posts/<%= post._id %>"><div class="ellipsis"><%= post.title %></div></a>
+         </td>
+         <td class="author">
+          <div class="ellipsis"><%= post.author ? post.author.username : "" %></div>
+         </td>
+         <td class="date">
+          <%= post.createdDate %>
+         </td>
+        </tr>
+       <% }) %>
+      </tbody>
+     </table>
   </div> <!-- container end -->
 
 </div>

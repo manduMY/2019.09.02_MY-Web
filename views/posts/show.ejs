@@ -24,10 +24,12 @@
 <!-- /header -->
 <div class="buttons">
         <a class="btn btn-primary" href="/posts">Back</a>
-        <a class="btn btn-primary" href="/posts/<%= post._id %>/edit">Edit</a>
-        <form action="/posts/<%= post._id %>?_method=delete" method="post">
-         <a class="btn btn-primary" href="#" onclick="confirm('삭제 하겠습니까 ??')?this.parentElement.submit():null;">Delete</a>
-        </form>
+        <% if(isAuthenticated && currentUser.id == post.author.id){ %>
+         <a class="btn btn-primary" href="/posts/<%= post._id %>/edit">Edit</a>
+         <form action="/posts/<%= post._id %>?_method=delete" method="post">
+          <a class="btn btn-primary" href="#" onclick="confirm('삭제 하겠습니까 ??')?this.parentElement.submit():null;">Delete</a>
+         </form>
+         <% } %>
        </div>
     
        <div class="contentBox">
@@ -39,12 +41,13 @@
          </div> <!-- col end-->
          <div class="col-sm-4 col-sm-push-8">
             <div class="post-info">
+             <div><span>Author</span> : <%= post.author ? post.author.username : "" %></div>
              <div><span>Created</span> : <%= post.createdDate %> <%= post.createdTime %></div>
              <% if(post.updatedAt) { %>
-              <div><span>Updated</span> : <%= post.updatedDate %> <%= post.updatedTime %></div>
+             <div><span>Updated</span> : <%= post.updatedDate %> <%= post.updatedTime %></div>
              <% } %>
             </div> <!-- post-info end -->
-           </div> <!-- col end-->
+         </div> <!-- col end-->
         </div> <!-- row end -->
        </div> <!-- post-container end -->
     
