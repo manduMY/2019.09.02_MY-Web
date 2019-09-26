@@ -171,17 +171,7 @@ div#menucontainer span {
   input[id="menuicon"] + label span:nth-child(3) {
     bottom:0;
   }
-  /* input[id="menuicon"]:checked + label span:nth-child(1){
-    top:50%;
-    transform:translateY(-50%) rotate(45deg);
-  }
-  input[id="menuicon"]:checked + label span:nth-child(2){
-    opacity:0;
-  }
-  input[id="menuicon"]:checked + label span:nth-child(3){
-    bottom:50%;
-    transform:translateY(50%) rotate(-45deg);
-  } */
+  
   form.Searchbtn input[type=text] {
     padding: 10px;
     font-size: 17px;
@@ -382,9 +372,9 @@ form label{
 }
 /* post style */
 .post {
-  max-width: 670px;
+  /* max-width: 670px; */
   font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
+  /* font-size: 12px; */
  }
  .post h2 {
   color: tomato;
@@ -451,9 +441,9 @@ form label{
  }
 /* user style */
 .user {
-  max-width: 320px;
+  /* max-width: 320px; */
   font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
+  /* font-size: 12px; */
  }
  .user-index ul{
   margin: 0;
