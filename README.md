@@ -7,4 +7,27 @@ My Web
 
 Node.js 내 웹사이트
 
-> Readme 작성중...
+<br/>
+
+웹사이트 구성
+---
+
+| 메인화면 |
+|:----------------------------------------:|
+|<img src="markdown/img/main.gif" width=1000 />|
+
+| 회원가입 |
+|:----------------------------------------:|
+|<img src="markdown/img/sign_up.gif" width=1000 />|
+
+| 로그인 |
+|:----------------------------------------:|
+|<img src="markdown/img/sign_in.gif" width=1000 />|
+
+| 게시판 |
+|:----------------------------------------:|
+|<img src="markdown/img/notice_board.gif" width=1000 />|
+
+| 전화번호부 |
+|:----------------------------------------:|
+|<img src="markdown/img/contacts.gif" width=1000 />|
